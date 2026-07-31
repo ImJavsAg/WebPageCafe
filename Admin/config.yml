@@ -1,0 +1,67 @@
+backend:
+  name: git-gateway
+  branch: main # Cambia a 'master' si tu rama principal en GitHub se llama master
+
+# ===================================================
+# 1. RUTA DE GUARDADO PARA ARCHIVOS MULTIMEDIA
+# ===================================================
+# Dónde se guardan físicamente las imágenes, PDFs y audios subidos desde el panel
+media_folder: "assets/uploads"
+
+# Ruta relativa con la que se insertarán en las notas
+public_folder: "assets/uploads"
+
+# ===================================================
+# 2. COLECCIÓN DE NOTICIAS Y PUBLICACIONES
+# ===================================================
+collections:
+  - name: "noticias"
+    label: "Noticias y Notas"
+    label_singular: "Noticia"
+    folder: "content/noticias" # Dónde se guardarán los archivos de texto de cada nota (.md)
+    create: true # Permite a los colaboradores redactar y publicar nuevas notas
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Formato de nombre del archivo
+    editor:
+      preview: true
+
+    fields:
+      - { label: "Título de la Nota", name: "title", widget: "string" }
+      - { label: "Subtítulo / Resumen", name: "subtitle", widget: "text", required: false }
+      - { label: "Fecha de Publicación", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
+      
+      # Selección de Autor entre la mesa de conductores
+      - { 
+          label: "Autor / Redactor", 
+          name: "author", 
+          widget: "select", 
+          default: "Prensa Cafeteando",
+          options: [
+            "Prensa Cafeteando",
+            "Antonio García",
+            "Javier Aguilar",
+            "Giovanni García",
+            "Prensa APREPSAC"
+          ] 
+        }
+
+      # Categoría de la publicación
+      - { 
+          label: "Categoría / Tag", 
+          name: "tag", 
+          widget: "select", 
+          options: [
+            "OPINIÓN", 
+            "NACIONAL", 
+            "LOCAL / EMPRESARIAL", 
+            "PUEBLA Y DEPORTES", 
+            "GASTRONOMÍA Y SALUD"
+          ] 
+        }
+
+      # Archivos adjuntos
+      - { label: "Imagen Destacada", name: "image", widget: "image", required: false }
+      - { label: "Documento PDF Adjunto (Ej. Convocatorias)", name: "pdf", widget: "file", required: false }
+      - { label: "Fragmento de Audio / Podcast (MP3)", name: "audio", widget: "file", required: false }
+
+      # Contenido escrito
+      - { label: "Cuerpo de la Nota", name: "body", widget: "markdown" }

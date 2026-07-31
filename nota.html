@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargando noticia... - Cafeteando La Noticia</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Librería para procesar el formato de texto escrito desde Decap CMS -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/taza.png" alt="Logotipo de Cafeteando La Noticia" class="logo">
+      <span class="brand-name">Cafeteando La Noticia</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- CONTENEDOR DINÁMICO DEL ARTÍCULO -->
+  <main class="article-container" id="article-content">
+    <a href="index.html" class="back-link">← Volver al inicio</a>
+    <p class="loading-msg">Cargando la información de la noticia...</p>
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer" style="margin-top: 60px;">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Cafeteando La Noticia</h3>
+        <p>Espacio de libre opinión, debate ciudadano y análisis periodístico sin censura en Puebla.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- REPRODUCTOR EN VIVO FIX -->
+  <div class="audio-player-bar">
+    <div class="player-info">
+      <span class="live-badge">EN VIVO 🔴</span>
+      <span class="track-title">Mié, Jue y Vie 9:00 AM | Transmisión por Así Lo Dice Puebla</span>
+    </div>
+    <a href="https://www.facebook.com/quechulaespuebla11" target="_blank" class="fb-live-btn">
+      Ver en Facebook Live 📘
+    </a>
+  </div>
+
+  <!-- SCRIPT DE CARGA Y RENDERIZADO DINÁMICO -->
+  <script>
+    // ⚠️ REEMPLAZA ESTOS DOS VALORES CON TUS DATOS REALES DE GITHUB
+    const GITHUB_USER = 'ImJavsAg';
+    const GITHUB_REPO = 'WebPageCafe';
+
+    async function cargarNotaDinamica() {
+      const container = document.getElementById('article-content');
+      const params = new URLSearchParams(window.location.search);
+      const fileName = params.get('file');
+
+      if (!fileName) {
+        container.innerHTML = `
+          <a href="index.html" class="back-link">← Volver al inicio</a>
+          <h2>No se encontró ninguna noticia especificada.</h2>
+        `;
+        return;
+      }
+
+      try {
+        // Obtener el archivo Markdown desde el repositorio público en GitHub
+        const rawUrl = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/main/content/noticias/${fileName}`;
+        const response = await fetch(rawUrl);
+
+        if (!response.ok) {
+          throw new Error('No se pudo encontrar la noticia solicitada.');
+        }
+
+        const rawText = await response.text();
+        const { meta, body } = parseMarkdownFile(rawText);
+
+        // Actualizar el título de la pestaña del navegador
+        document.title = `${meta.title || 'Noticia'} - Cafeteando La Noticia`;
+
+        // Formatear la fecha
+        const fecha = meta.date 
+          ? new Date(meta.date).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' })
+          : 'Reciente';
+
+        // Convertir el texto Markdown del cuerpo a HTML estructurado
+        const bodyHTML = typeof marked !== 'undefined' ? marked.parse(body) : body;
+
+        // Construir la estructura visual completa
+        container.innerHTML = `
+          <a href="index.html" class="back-link">← Volver al inicio</a>
+
+          <header class="article-header">
+            <span class="tag opinion">${meta.tag || 'OPINIÓN'}</span>
+            <h1>${meta.title || 'Sin Título'}</h1>
+            ${meta.subtitle ? `<p class="article-subtitle">${meta.subtitle}</p>` : ''}
+            
+            <div class="article-meta">
+              <span>✍️ Por <strong>${meta.author || 'Prensa Cafeteando'}</strong></span> •
+              <span>📅 ${fecha}</span>
+            </div>
+          </header>
+
+          ${meta.image ? `
+            <div class="featured-image-box">
+              <img src="${meta.image}" alt="${meta.title}" class="featured-image">
+            </div>
+          ` : ''}
+
+          ${meta.audio ? `
+            <div class="podcast-box">
+              <div class="podcast-info">
+                <span class="podcast-icon">🎙️</span>
+                <div>
+                  <h4>Escuchar transmisión o audio de esta nota</h4>
+                </div>
+              </div>
+              <audio controls src="${meta.audio}" class="article-audio"></audio>
+            </div>
+          ` : ''}
+
+          <section class="article-body">
+            ${bodyHTML}
+          </section>
+
+          ${meta.pdf ? `
+            <div class="podcast-box" style="border-left-color: #059669; background-color: #f0fdf4; margin-top: 30px;">
+              <div class="podcast-info">
+                <span class="podcast-icon">📑</span>
+                <div>
+                  <h4>Documento Adjunto</h4>
+                  <p>Descarga o consulta la convocatoria/documento PDF oficial.</p>
+                </div>
+              </div>
+              <a href="${meta.pdf}" target="_blank" class="submit-btn" style="display: inline-block; text-decoration: none; background-color: #059669; margin-top: 10px;">
+                📄 Ver Documento PDF
+              </a>
+            </div>
+          ` : ''}
+
+          <!-- SECCIÓN DE COMENTARIOS -->
+          <section class="comments-section" style="margin-top: 50px;">
+            <h3>Opinión de la Comunidad</h3>
+            <p class="comments-intro">Espacio abierto al debate. Déjanos tu punto de vista sobre esta publicación.</p>
+
+            <form class="comment-form" onsubmit="event.preventDefault(); alert('¡Gracias por tu comentario! Se ha publicado.');">
+              <div class="form-row">
+                <input type="text" placeholder="Tu Nombre o Apodo *" required class="form-input">
+                <input type="email" placeholder="Tu Correo *" required class="form-input">
+              </div>
+              <textarea rows="4" placeholder="Escribe tu opinión sobre esta noticia..." required class="form-textarea"></textarea>
+              <button type="submit" class="submit-btn">Publicar Opinión</button>
+            </form>
+          </section>
+        `;
+
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `
+          <a href="index.html" class="back-link">← Volver al inicio</a>
+          <h2>Error al cargar la noticia</h2>
+          <p>No se pudo recuperar la publicación desde GitHub. Asegúrate de que el nombre del archivo sea correcto.</p>
+        `;
+      }
+    }
+
+    // Función encargada de separar el encabezado YAML del texto principal
+    function parseMarkdownFile(text) {
+      const meta = {};
+      let body = text;
+      const match = text.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+
+      if (match) {
+        const frontmatter = match[1];
+        body = text.replace(match[0], '').trim();
+
+        frontmatter.split('\n').forEach(line => {
+          const [key, ...val] = line.split(':');
+          if (key && val.length) {
+            let value = val.join(':').trim();
+            value = value.replace(/^["']|["']$/g, '');
+            meta[key.trim()] = value;
+          }
+        });
+      }
+
+      return { meta, body };
+    }
+
+    document.addEventListener('DOMContentLoaded', cargarNotaDinamica);
+  </script>
+</body>
+</html>
