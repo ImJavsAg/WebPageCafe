@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  color: #333;
+  color: #ff7700;
 }
 
 /* Barra del encabezado */
@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: space-between; /* Separa el logo a la izquierda y el menú a la derecha */
   align-items: center; /* Alinea verticalmente los elementos al centro */
-  background-color: #1e293b; /* Color de fondo oscuro */
+  background-color: #e2e5e8; /* Color de fondo oscuro */
   padding: 15px 30px;
 }
 
@@ -28,7 +28,7 @@ body {
 
 /* Control del tamaño del logotipo */
 .logo {
-  width: 45px; /* Ajusta este valor según la escala de tu imagen */
+  width: 90px; /* Ajusta este valor según la escala de tu imagen */
   height: auto;
   border-radius: 6px;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #38bdf8; /* Cambia de color al pasar el cursor */
+  color: #d3e3eb; /* Cambia de color al pasar el cursor */
 }
 
 /* Estilo básico del contenido principal */
