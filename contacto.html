@@ -3,39 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto - Mi Marca</title>
-  <!-- Usamos la misma hoja de estilos -->
+  <title>Contacto - Cafeteando La Noticia</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ENCABEZADO (Mismo que en index.html) -->
-<header class="navbar">
-  <!-- ÚNICO bloque para el logo y nombre (ya incluye el enlace a inicio) -->
-  <a href="index.html" class="brand">
-    <img src="assets/Cafe.png" alt="Logotipo del sitio" class="logo">
-    <span class="brand-name">Cafeteando La Noticia</span>
-  </a>
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/taza.png" alt="Logotipo de Cafeteando La Noticia" class="logo">
+      <span class="brand-name">Cafeteando La Noticia</span>
+    </a>
 
-  <!-- Menú de navegación -->
-  <nav class="nav-links">
-    <a href="index.html">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="contacto.html">Contacto</a>
-  </nav>
-</header>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html" class="active">Contacto</a>
+    </nav>
+  </header>
 
-  <!-- CONTENIDO ESPECÍFICO DE CONTACTO -->
-  <main class="content">
-    <h1>Contáctanos</h1>
-    <p>¿Tienes alguna duda o proyecto en mente? Escríbenos directamente.</p>
+<main class="content">
+  <h1>Contáctanos</h1>
+  <p>¿Tienes alguna denuncia ciudadana, sugerencia o quieres anunciarte con nosotros? Escríbenos directamente.</p>
 
-    <!-- Información de contacto rápida -->
-    <div class="contact-info">
-      <p>📧 Email: quechulaespuebla11@hotmail.com</p>
-      <p>📱 Teléfono: +52 222 623 6995</p>
+ <div class="contact-info">
+  <p>🎙️ <strong>Programa al aire:</strong> Miércoles, Jueves y Viernes a las 9:00 AM</p>
+  <p>👥 <strong>Mesa de debate:</strong> Antonio García, Jorge Méndez, Mario Olvera, René Victoriano y Claudio De La Llata</p>
+  <p>📧 <strong>Email:</strong> quechulaespuebla11@hotmail.com</p>
+  <p>📱 <strong>Teléfono / WhatsApp:</strong> +52 222 623 6995</p>
+</div>
+</main>
+
+<!-- PIE DE PÁGINA (FOOTER) -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>Cafeteando La Noticia</h3>
+      <p>Espacio de libre opinión, debate ciudadano y análisis periodístico sin censura en Puebla.</p>
     </div>
-  </main>
+
+    <div class="footer-links">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-credits">
+  <h4>Producción</h4>
+  <p>Una producción de <strong>Así Lo Dice Puebla</strong></p>
+  <p>🎙️ Con Antonio García, Jorge Méndez, Mario Olvera, René Victoriano y Claudio De La Llata.</p>
+</div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Cafeteando La Noticia | Producido por Así Lo Dice Puebla. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!-- BARRA INFERIOR DE NAVEGACIÓN A FACEBOOK LIVE -->
+<div class="audio-player-bar">
+  <div class="player-info">
+    <span class="live-badge">EN VIVO 🔴</span>
+    <span class="track-title">Mié, Jue y Vie 9:00 AM | Transmisión en directo por Facebook</span>
+  </div>
+  <a href="https://www.facebook.com/reel/1499916438601010" target="_blank" class="fb-live-btn">
+    Ver en Facebook Live 📘
+  </a>
+</div>
 
 </body>
 </html>

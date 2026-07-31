@@ -1,4 +1,4 @@
-/* Reseteo básico de márgenes */
+/* Reseteo básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,69 +6,147 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  color: #010101;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #1e293b;
   background-color: #f4f6f8;
-
+  padding-bottom: 100px; /* OBLIGATORIO: Evita que el reproductor fijo tape contenido */
 }
 
 /* Barra del encabezado */
 .navbar {
   display: flex;
-  justify-content: space-between; /* Separa el logo a la izquierda y el menú a la derecha */
-  align-items: center; /* Alinea verticalmente los elementos al centro */
-  background-color: #FF5824; /* Color de fondo oscuro */
-  padding: 15px 30px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FF5824;
+  padding: 12px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* Contenedor de logo + nombre */
 .brand {
   display: flex;
   align-items: center;
-  gap: 377px; /* Espacio entre la imagen del logo y el texto */
-  text-decoration: none; /* Elimina subrayado de enlaces */
+  gap: 15px; /* Ajustado para alinear correctamente */
+  text-decoration: none;
 }
 
-
-/* Control del tamaño del logotipo */
 .logo {
-  width: 220px; /* Ajusta este valor según la escala de tu imagen */
+  width: 60px; /* Tamaño optimizado para la barra superior */
   height: auto;
   border-radius: 6px;
 }
 
-/* Nombre de la marca */
 .brand-name {
-  color: #f7f3f3;
+  font-family: 'Futura-Bold', 'Futura', 'Trebuchet MS', Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
-  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase; /* Opcional: le da un toque de encabezado de noticiero */
+  color: #ffffff;
 }
 
-/* Estilo para los enlaces del menú */
+/* Menú de navegación */
 .nav-links a {
-  color: #e2e8f0;
+  color: #ffffff;
   text-decoration: none;
   margin-left: 20px;
   font-weight: 500;
+  padding-bottom: 4px;
+  transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: #0caeff; /* Cambia de color al pasar el cursor */
+  color: #1e293b;
 }
-/* Resalta el enlace activo */
+
+/* Enlace activo */
 .nav-links a.active {
-  color: #38bdf8;
   font-weight: bold;
-  border-bottom: 2px solid #38bdf8;
+  border-bottom: 2px solid #ffffff;
 }
 
-/* Estilo básico del contenido principal */
+/* Contenido Principal */
 .content {
-  padding: 40px;
+  padding: 40px 20px 20px;
   text-align: center;
-
+  max-width: 900px;
+  margin: 0 auto;
 }
-/* CSS para mantener el reproductor siempre visible */
+
+.content h1 {
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.content p {
+  color: #475569;
+  font-size: 1.1rem;
+}
+
+/* Layout Grid para Tarjetas de Noticias */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: 20px auto 40px;
+  padding: 0 20px;
+}
+
+.news-card {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.news-card h3 {
+  margin: 12px 0 8px;
+  color: #0f172a;
+  font-size: 1.25rem;
+}
+
+.news-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.news-card a {
+  color: #FF5824;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.news-card a:hover {
+  text-decoration: underline;
+}
+
+/* Etiquetas / Tags */
+.tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.tag.opinion { background-color: #8b5cf6; }
+.tag.nacional { background-color: #059669; }
+
+/* Reproductor fijo en la parte inferior */
 .audio-player-bar {
   position: fixed;
   bottom: 0;
@@ -80,8 +158,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
   z-index: 1000;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .live-badge {
@@ -90,5 +174,755 @@ body {
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 0.8rem;
-  margin-right: 10px;
+}
+
+/* Caja de contacto */
+.contact-info {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.contact-info p {
+  margin: 12px 0;
+  font-size: 1.05rem;
+}
+
+/* ===================================================
+   ESTILOS PARA NOTAS INDIVIDUALES (nota1.html)
+   =================================================== */
+
+.article-container {
+  max-width: 820px;
+  margin: 30px auto 40px;
+  padding: 0 20px;
+}
+
+.back-link {
+  display: inline-block;
+  color: #FF5824;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 0.8;
+}
+
+/* Encabezado del artículo */
+.article-header h1 {
+  font-size: 2.2rem;
+  color: #0f172a;
+  margin: 12px 0;
+  line-height: 1.25;
+}
+
+.article-subtitle {
+  font-size: 1.2rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.article-meta {
+  color: #64748b;
+  font-size: 0.9rem;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 25px;
+}
+
+/* Imagen destacada */
+.featured-image-box {
+  margin-bottom: 30px;
+}
+
+.featured-image {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.image-caption {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 8px;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Reproductor de Podcast interno */
+.podcast-box {
+  background-color: #fff3ed;
+  border: 1px solid #ffd8c7;
+  border-left: 5px solid #FF5824;
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.podcast-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.podcast-icon {
+  font-size: 1.8rem;
+}
+
+.podcast-info h4 {
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.podcast-info p {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.article-audio {
+  width: 100%;
+}
+
+/* Texto del artículo */
+.article-body {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #334155;
+}
+
+.lead-paragraph {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+.article-body p {
+  margin-bottom: 20px;
+}
+
+.article-body h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin: 35px 0 15px;
+}
+
+.article-body ul {
+  margin: 0 0 25px 25px;
+}
+
+.article-body li {
+  margin-bottom: 8px;
+}
+
+/* Cita destacada (Blockquote) */
+.quote-box {
+  background-color: #ffffff;
+  border-left: 4px solid #FF5824;
+  padding: 20px 24px;
+  margin: 30px 0;
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.quote-box cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: bold;
+  color: #FF5824;
+}
+
+/* Caja de llamado a la acción */
+.callout-box {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 40px 0;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* ===================================================
+   SECCIÓN DE COMENTARIOS
+   =================================================== */
+
+.comments-section {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-top: 40px;
+}
+
+.comments-section h3 {
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.comments-intro {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+/* Formulario de comentarios */
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 35px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: #FF5824;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  background-color: #FF5824;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #e04717;
+}
+
+/* Tarjetas de comentario publicadas */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment-card {
+  background-color: #f8fafc;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #f1f5f9;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #FF5824;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.user-avatar.alt {
+  background-color: #8b5cf6;
+}
+
+.user-name {
+  display: block;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+
+.comment-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.comment-text {
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .article-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .comments-section {
+    padding: 20px 15px;
+  }
+}
+
+/* ===================================================
+   INSIGNIA DE HORARIO Y SECCIÓN DE CONDUCTORES
+   =================================================== */
+
+/* Badged de horario en la sección principal */
+.schedule-badge {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #ffe6dc;
+  color: #c23300;
+  border: 1px solid #ffbca6;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+/* Sección Conductores */
+.hosts-section {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.hosts-section h2 {
+  font-size: 1.8rem;
+  color: #0f172a;
+}
+
+.hosts-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+}
+
+.hosts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+.host-card {
+  background-color: #ffffff;
+  padding: 24px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s;
+}
+
+.host-card:hover {
+  transform: translateY(-3px);
+  border-color: #FF5824;
+}
+
+.host-avatar {
+  width: 64px;
+  height: 64px;
+  background-color: #1e293b;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border: 2px solid #FF5824;
+}
+
+.host-card h3 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.host-card span {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ===================================================
+   CONTENEDOR DE VIDEO DE FACEBOOK (RESPONSIVO 16:9)
+   =================================================== */
+
+.live-stream-section {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.stream-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.stream-header h2 {
+  font-size: 1.6rem;
+  color: #0f172a;
+}
+
+/* Caja del video con proporción 16:9 */
+.facebook-video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #000000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.facebook-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.stream-note {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.stream-note a {
+  color: #FF5824;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.stream-note a:hover {
+  text-decoration: underline;
+}
+
+.fb-live-btn {
+  background-color: #1877f2; /* Azul oficial de Facebook */
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.fb-live-btn:hover {
+  background-color: #166fe5;
+}
+/* Estilos para Reels verticales de Facebook */
+.reel-section {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.reel-section h2 {
+  font-size: 1.5rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.facebook-reel-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 300px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================================
+   ESTILOS PARA LA SECCIÓN DE SERVICIOS (servicios.html)
+   =================================================== */
+
+.services-container {
+  max-width: 1050px;
+  margin: 10px auto 50px;
+  padding: 0 20px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 30px 22px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: #FF5824;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 15px;
+}
+
+.service-features li {
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Caja de llamado a la acción (CTA) */
+.cta-services-box {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 35px 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cta-services-box h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.cta-services-box p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #FF5824;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.cta-button:hover {
+  background-color: #e04717;
+}
+
+/* ===================================================
+   SECCIÓN DE PRODUCTORA (Así Lo Dice Puebla) Y FOOTER
+   =================================================== */
+
+.partner-section {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.partner-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 35px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #334155;
+}
+
+.partner-tag {
+  display: inline-block;
+  background-color: #FF5824;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.partner-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.partner-card h2 span {
+  color: #FF5824;
+}
+
+.partner-card p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+
+.partner-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.partner-btn:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+/* FOOTER GENERAL */
+.site-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+  border-top: 2px solid #FF5824;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-links h4, .footer-credits h4 {
+  color: #ffffff;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #FF5824;
+}
+
+.footer-credits p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #64748b;
 }
