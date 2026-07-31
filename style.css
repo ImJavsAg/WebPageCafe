@@ -66,4 +66,29 @@ body {
 .content {
   padding: 40px;
   text-align: center;
+
+}
+/* CSS para mantener el reproductor siempre visible */
+.audio-player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e293b;
+  color: #fff;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.live-badge {
+  background-color: #ef4444;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 10px;
 }
