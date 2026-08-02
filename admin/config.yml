@@ -1,6 +1,3 @@
-site_url: https://cafeteandola.com
-display_url: https://cafeteandola.com
-
 backend:
   name: git-gateway
   branch: main # Cambia a 'master' si tu rama principal en GitHub se llama master

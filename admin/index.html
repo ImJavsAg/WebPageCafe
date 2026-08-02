@@ -5,31 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel de Administración - Cafeteando La Noticia</title>
 
-  <!-- 1. Cargar la librería de Netlify Identity -->
+  <!-- Widget oficial de Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-
-  <!-- 2. INICIALIZAR IDENTITY ANTES DE CARGAR DECAP CMS -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.init({
-        APIUrl: "https://cafeteandola.netlify.app/.netlify/identity"
-      });
-    }
-  </script>
-
-  <!-- 3. Cargar Decap CMS (ahora sí leerá la conexión correctamente) -->
+  <!-- Carga del panel de Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-
-  <!-- 4. Script para redirigir tras un login exitoso -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("login", () => {
-        document.location.href = "/admin/";
-      });
-    }
-  </script>
-
 </body>
 </html>
