@@ -1,0 +1,18 @@
+[
+  {
+    "id": 5,
+    "title": "Comida de Amigos en Restaurante Cabo San Lucas Las Palmas",
+    "date": "Viernes 31 de Julio de 2026",
+    "author": "Toño García (APREPSAC Relaciones Públicas)",
+    "location": "Plaza Orión",
+    "tag": "Gastronomía & Reuniones",
+    "image": "assets/Comida31julio.jpg",
+    "caption": "Toño García durante la grata reunión gastronómica en el restaurante Cabo San Lucas Las Palmas.",
+    "intro": "El pasado viernes 31 de julio de 2026, disfrutamos de una excelente convivencia de amigos en el reconocido restaurante Cabo San Lucas Las Palmas, ubicado en Plaza Orión.",
+    "content": "Tuvimos el honor de compartir la mesa con el propietario Alberto y su distinguida esposa, dueños de la conocida Taquería El Compita, en un ameno encuentro organizado por Toño García, representante de Relaciones Públicas de la APREPSAC.",
+    "recommendations": [
+      "Horario sugerido: Llegar a las 13:30 PM, ya que después de las 15:00 horas el lugar se llena por completo.",
+      "Platillo recomendado: Salmón a la plancha."
+    ]
+  }
+]
