@@ -1,120 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
+  <!-- Open Graph Base (Se actualizará dinámicamente) -->
+  <meta id="og-type" property="og:type" content="article">
+  <meta id="og-site" property="og:site_name" content="Cafeteando La Noticia">
+  <meta id="og-title" property="og:title" content="Cafeteando La Noticia - Noticia Destacada">
+  <meta id="og-desc" property="og:description" content="Lee el artículo completo en el portal informativo de Cafeteando La Noticia en Puebla.">
+  <meta id="og-image" property="og:image" content="https://cafeteandola.com/assets/taza.png">
+  <meta id="og-url" property="og:url" content="https://cafeteandola.com/nota.html">
+
+
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">Cargando noticia... - Cafeteando La Noticia</title>
-  <style>
-    :root {
-      --primary: #8b1e0f;
-      --accent: #d97706;
-      --bg-light: #fdfbf7;
-      --text-dark: #292524;
-      --text-muted: #78716c;
-      --border-color: #e7e5e4;
-      --card-bg: #ffffff;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg-light); color: var(--text-dark); line-height: 1.7; }
-    header { background: var(--primary); color: white; padding: 1.5rem 1rem; text-align: center; }
-    nav { background: white; border-bottom: 1px solid var(--border-color); padding: 0.75rem 1rem; }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
-    nav a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-    main { margin: 2rem auto; }
-    article { background: var(--card-bg); border-radius: 12px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .meta-badge { display: inline-block; background: #fef3c7; color: #92400e; font-weight: 700; font-size: 0.8rem; padding: 0.25rem 0.75rem; border-radius: 50px; text-transform: uppercase; margin-bottom: 1rem; }
-    .article-title { font-size: 2rem; color: #1c1917; margin-bottom: 1rem; line-height: 1.3; }
-    .article-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; font-size: 0.9rem; color: var(--text-muted); border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem; }
-    .featured-image-container { margin: 1.5rem 0 2rem; border-radius: 10px; overflow: hidden; background: #f3f4f6; text-align: center; }
-    .featured-image-container img { width: 100%; height: auto; max-height: 550px; object-fit: cover; display: block; }
-    .image-caption { font-size: 0.85rem; color: var(--text-muted); padding: 0.6rem 1rem; background: #f8fafc; font-style: italic; border-top: 1px solid #e2e8f0; }
-    .content-body { font-size: 1.05rem; color: #334155; }
-    .content-body p { margin-bottom: 1.25rem; }
-    .recommendation-box { background: #fffbeb; border-left: 4px solid var(--accent); padding: 1.25rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
-    .recommendation-box h3 { color: #b45309; font-size: 1.1rem; margin-bottom: 0.5rem; }
-    .recommendation-box ul { list-style: none; padding: 0; }
-    .recommendation-box li { margin-bottom: 0.4rem; padding-left: 1.5rem; position: relative; }
-    .recommendation-box li::before { content: "📌"; position: absolute; left: 0; }
-    footer { text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 3rem; }
-  </style>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-  <header>
-    <h1>Cafeteando La Noticia</h1>
-    <p>Portal Informativo &amp; Recomendaciones Gastronómicas</p>
+  <!-- Barra de progreso de lectura -->
+  <div class="reading-progress-bar" id="progress-bar"></div>
+
+
+  <!-- ENCABEZADO -->
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      <img src="assets/taza.png" alt="Logotipo de Cafeteando La Noticia" class="logo">
+      <span class="brand-name">Cafeteando La Noticia</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
   </header>
 
-  <nav>
-    <div class="container">
-      <a href="index.html">&larr; Volver al Inicio</a>
-    </div>
-  </nav>
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="article-container">
+    <a href="index.html" class="back-link">&larr; Volver al Inicio</a>
 
-  <main class="container">
-    <article id="news-article">
-      <p>Cargando contenido...</p>
-    </article>
+    <div id="article-content">
+      <p style="text-align: center; color: #64748b; padding: 40px 0;">Cargando publicación...</p>
+    </div>
+
+    <!-- NOTICIAS RELACIONADAS -->
+    <section class="related-news-section" id="related-section" style="display: none;">
+      <h3>Otras noticias que te pueden interesar</h3>
+      <div class="related-grid" id="related-container"></div>
+    </section>
+
+    <!-- COMENTARIOS -->
+    <section class="comments-section">
+      <h3>Comentarios &amp; Opinión Ciudadana</h3>
+      <p class="comments-intro">Sé el primero en compartir tu punto de vista sobre esta nota.</p>
+
+      <form class="comment-form" onsubmit="event.preventDefault(); alert('¡Gracias! Tu comentario ha sido enviado para revisión.');">
+        <div class="form-row">
+          <input type="text" class="form-input" placeholder="Tu Nombre" required>
+          <input type="email" class="form-input" placeholder="Correo Electrónico" required>
+        </div>
+        <textarea class="form-textarea" rows="4" placeholder="Escribe tu comentario aquí..." required></textarea>
+        <button type="submit" class="submit-btn">Publicar Comentario</button>
+      </form>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Cafeteando La Noticia. Todos los derechos reservados.</p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Cafeteando La Noticia</h3>
+        <p>Espacio de libre opinión, debate ciudadano y análisis periodístico sin censura en Puebla.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-credits">
+        <h4>Producción</h4>
+        <p>Una producción de <strong>Así Lo Dice Puebla</strong></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Cafeteando La Noticia | Producido por Así Lo Dice Puebla. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <script>
-    async function loadArticle() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const noteId = parseInt(urlParams.get('id')) || 5;
+  <!-- REPRODUCTOR FIJO -->
+  <div class="audio-player-bar">
+    <div class="player-info">
+      <span class="live-badge">EN VIVO 🔴</span>
+      <span class="track-title">Mié, Jue y Vie 9:00 AM | Transmisión por <strong>Así Lo Dice Puebla</strong></span>
+    </div>
+    <a href="https://www.facebook.com/reel/1499916438601010" target="_blank" rel="noopener" class="fb-live-btn">
+      Ver en Facebook Live 📘
+    </a>
+  </div>
 
-      try {
-        const response = await fetch('data/noticias.json');
-        const news = await response.json();
-        const article = news.find(n => n.id === noteId);
+  <!-- SCRIPT LÓGICO -->
+<script>
+  async function loadArticle() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const noteId = parseInt(urlParams.get('id')) || 1; // ID por defecto
+    const articleContent = document.getElementById('article-content');
 
-        if (!article) {
-          document.getElementById('news-article').innerHTML = '<h2>Noticia no encontrada</h2>';
-          return;
-        }
+    try {
+      const response = await fetch('data/noticias.json');
+      if (!response.ok) throw new Error("No se pudo cargar data/noticias.json");
 
-        document.title = `${article.title} - Cafeteando La Noticia`;
+      const news = await response.json();
+      const article = news.find(n => n.id === noteId);
 
-        let recsHtml = '';
-        if (article.recommendations && article.recommendations.length > 0) {
-          recsHtml = `
-            <div class="recommendation-box">
-              <h3>Recomendaciones del Día:</h3>
-              <ul>
-                ${article.recommendations.map(r => `<li>${r}</li>`).join('')}
-              </ul>
+      if (!article) {
+        if (articleContent) {
+          articleContent.innerHTML = `
+            <div class="article-header" style="text-align: center; padding: 40px 0;">
+              <h1>Noticia no encontrada</h1>
+              <p>La nota solicitada no existe o fue movida.</p>
             </div>
           `;
         }
+        return;
+      }
 
-        document.getElementById('news-article').innerHTML = `
-          <span class="meta-badge">${article.tag}</span>
-          <h1 class="article-title">${article.title}</h1>
-          <div class="article-meta">
-            <span>📅 <strong>Fecha:</strong> ${article.date}</span>
-            <span>✍️ <strong>Por:</strong> ${article.author}</span>
-            <span>📍 <strong>Lugar:</strong> ${article.location}</span>
-          </div>
-          <div class="featured-image-container">
-            <img src="${article.image}" alt="${article.title}">
-            <div class="image-caption">${article.caption}</div>
-          </div>
-          <div class="content-body">
-            <p>${article.intro}</p>
-            <p>${article.content}</p>
-            ${recsHtml}
+      // 1. Título de la pestaña
+      document.title = `${article.title} - Cafeteando La Noticia`;
+
+      // 2. Tiempo estimado de lectura
+      const textToCount = (article.intro || '') + ' ' + (article.content || '');
+      const wordCount = textToCount.trim().split(/\s+/).length;
+      const readTimeMinutes = Math.max(1, Math.ceil(wordCount / 200));
+
+      // 3. Cajas de recomendaciones
+      let recsHtml = '';
+      if (article.recommendations && article.recommendations.length > 0) {
+        recsHtml = `
+          <div class="recommendation-box">
+            <h3>Recomendaciones del Día:</h3>
+            <ul>
+              ${article.recommendations.map(r => `<li>${r}</li>`).join('')}
+            </ul>
           </div>
         `;
-      } catch (error) {
-        console.error('Error al cargar la noticia:', error);
+      }
+
+      // 4. Enlaces de compartir en redes
+      const currentUrl = encodeURIComponent(window.location.href);
+      const shareTitle = encodeURIComponent(article.title);
+      const waUrl = `https://api.whatsapp.com/send?text=${shareTitle}%20${currentUrl}`;
+      const fbUrl = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+
+      // 5. Elección entre Video de YouTube o Imagen
+      let mediaHtml = '';
+      if (article.youtube_id) {
+        mediaHtml = `
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube-nocookie.com/embed/${article.youtube_id}" 
+              title="${article.title}" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        `;
+      } else if (article.image) {
+        mediaHtml = `
+          <img src="${article.image}" alt="${article.title}" class="featured-image" loading="lazy" decoding="async">
+        `;
+      }
+
+      // 6. Inyección final al HTML
+      if (articleContent) {
+        articleContent.innerHTML = `
+          <header class="article-header">
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 10px;">
+              <span class="tag opinion">${article.tag || 'NOTICIAS'}</span>
+              <span class="read-time-badge" style="background: #f1f5f9; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; color: #475569;">⏱️ ${readTimeMinutes} min de lectura</span>
+            </div>
+            <h1>${article.title}</h1>
+            <div class="article-meta">
+              <span>📅 <strong>Fecha:</strong> ${article.date}</span>
+              <span>✍️ <strong>Por:</strong> ${article.author}</span>
+              <span>📍 <strong>Lugar:</strong> ${article.location || 'Puebla'}</span>
+            </div>
+          </header>
+
+          <div class="featured-image-box">
+            ${mediaHtml}
+            <span class="image-caption">${article.caption || ''}</span>
+          </div>
+
+          <div class="article-body">
+            <p><strong>${article.intro || ''}</strong></p>
+            <p>${article.content || ''}</p>
+            ${recsHtml}
+
+            <!-- Botones de Compartir -->
+            <div class="share-container" style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+              <span class="share-label" style="font-weight: bold; color: #475569;">¿Te gustó esta nota? Compártela:</span>
+              <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="share-btn btn-wa" style="background-color: #25d366; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                📱 WhatsApp
+              </a>
+              <a href="${fbUrl}" target="_blank" rel="noopener noreferrer" class="share-btn btn-fb" style="background-color: #1877f2; color: white; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem;">
+                📘 Facebook
+              </a>
+            </div>
+          </div>
+        `;
+      }
+
+      if (window.lucide) lucide.createIcons();
+
+    } catch (error) {
+      console.error('Error al cargar la publicación:', error);
+      if (articleContent) {
+        articleContent.innerHTML = `
+          <div class="article-header" style="text-align: center; padding: 40px 0;">
+            <h1>Error al cargar la nota</h1>
+            <p>Asegúrate de que el archivo <code>data/noticias.json</code> esté bien formateado.</p>
+          </div>
+        `;
       }
     }
+  }
 
-    loadArticle();
-  </script>
+  // Barra de progreso de lectura en scroll
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) progressBar.style.width = scrolled + '%';
+  });
+
+  document.addEventListener('DOMContentLoaded', loadArticle);
+</script>
 </body>
 </html>

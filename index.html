@@ -4,6 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafeteando La Noticia - Inicio</title>
+
+  <!-- SEO Básico -->
+  <meta name="description" content="Cafeteando La Noticia - Espacio de libre opinión, debate ciudadano, noticias y análisis periodístico sin censura en Puebla. Producido por Así Lo Dice Puebla.">
+  <meta name="keywords" content="Noticias Puebla, Cafeteando La Noticia, Así Lo Dice Puebla, periodismo Puebla, gastronomía Puebla, APREPSAC, Toño García">
+  <meta name="author" content="Cafeteando La Noticia">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook & WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cafeteando La Noticia">
+  <meta property="og:url" content="https://cafeteandola.com/">
+  <meta property="og:title" content="Cafeteando La Noticia | Periodismo &amp; Opinión Sin Censura en Puebla">
+  <meta property="og:description" content="Portal informativo, análisis periodístico sin censura y recomendaciones gastronómicas. En vivo Miércoles, Jueves y Viernes a las 9:00 AM.">
+  <meta property="og:image" content="https://cafeteandola.com/assets/taza.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Tarjeta para Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://cafeteandola.com/">
+  <meta name="twitter:title" content="Cafeteando La Noticia | Periodismo &amp; Opinión Sin Censura">
+  <meta name="twitter:description" content="Espacio de libre opinión, debate ciudadano y análisis periodístico en Puebla.">
+  <meta name="twitter:image" content="https://cafeteandola.com/assets/taza.png">
+
+
+
+  
   <link rel="stylesheet" href="style.css">
 
   <!-- Iconos profesionales (Lucide Icons) -->
@@ -11,6 +39,11 @@
 
   <!-- Widget oficial de Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Favicon e Iconos Móviles -->
+  <link rel="icon" type="image/png" href="assets/taza.png">
+  <link rel="apple-touch-icon" href="assets/taza.png">
+  <meta name="theme-color" content="#8b1e0f">
 </head>
 <body>
 
@@ -147,41 +180,28 @@
   </section>
 
   <!-- SECCIÓN DE NOTICIAS (CONTENEDOR UNIFICADO) -->
+
+<!-- BARRA DE BÚSQUEDA Y FILTROS -->
+  <section class="filter-section">
+    <div class="search-box">
+      <i data-lucide="search" class="search-icon"></i>
+      <input type="text" id="search-input" class="search-input" placeholder="Buscar por palabra clave, título o lugar...">
+    </div>
+
+    <div class="category-filters" id="category-filters">
+      <button class="filter-btn active" data-category="TODAS">Todas</button>
+      <button class="filter-btn" data-category="GASTRONOMÍA">Gastronomía</button>
+      <button class="filter-btn" data-category="LOCAL">Local / Empresarial</button>
+      <button class="filter-btn" data-category="NACIONAL">Nacional</button>
+      <button class="filter-btn" data-category="OPINIÓN">Opinión</button>
+    </div>
+  </section>
+
+  
+
+  <!-- SECCIÓN DE NOTICIAS Y PUBLICACIONES -->
   <section class="news-grid" id="news-grid">
-   
-    
-
-    <!-- NOTA 4 -->
-    <article class="news-card">
-      <span class="tag opinion" style="background-color: #059669;">LOCAL / EMPRESARIAL</span>
-      <h3>APREPSAC y Secretaría de Trabajo Avanzan en la Certificación "Puebla Cinco de Mayo"</h3>
-      <p>Reunión de trabajo este 31 de julio con autoridades de normatividad laboral e integrantes del sector restaurantero...</p>
-      <a href="nota4.html">Leer artículo completo →</a>
-    </article>
-
-    <!-- NOTA 3 -->
-    <article class="news-card">
-      <span class="tag nacional">NACIONAL / LOCAL</span>
-      <h3>Cierre de la Academia Militarizada Zaragoza e Inseguridad en Puebla</h3>
-      <p>Análisis en cabina sobre la resolución de la SEP, la percepción del 81.3% de inseguridad y el estado del sistema de salud...</p>
-      <a href="nota3.html">Leer artículo completo →</a>
-    </article>
-
-    <!-- NOTA 2 -->
-    <article class="news-card">
-      <span class="tag opinion">PUEBLA Y DEPORTES</span>
-      <h3>Inseguridad en el Centro Histórico y Talento Poblano Rumbo al Mundial de Boxeo</h3>
-      <p>Comercio establecido alerta por afectaciones en el Centro Histórico, denuncias en salud e impulso a jóvenes pugilistas...</p>
-      <a href="nota2.html">Leer artículo completo →</a>
-    </article>
-
-    <!-- NOTA 1 -->
-    <article class="news-card">
-      <span class="tag opinion">GASTRONOMÍA Y SALUD</span>
-      <h3>Banderazo del Chile en Nogada 2026 y Revelan Crisis en IMSS-Bienestar</h3>
-      <p>APRESAC arranca la temporada gastronómica en Puebla mientras se debaten filtraciones sobre desabasto e inseguridad...</p>
-      <a href="nota1.html">Leer artículo completo →</a>
-    </article>
+    <p class="loading-msg" style="grid-column: 1 / -1; text-align: center; color: #64748b;">Cargando publicaciones recientes...</p>
   </section>
 
   <!-- PIE DE PÁGINA (FOOTER) -->
@@ -225,50 +245,125 @@
   </div>
 
   <!-- SCRIPT UNIFICADO Y OPTIMIZADO -->
-  <script>
-    // Inicializar iconos de Lucide
-    lucide.createIcons();
+ <script>
+  let allNewsData = [];
+  let activeCategory = 'TODAS';
 
-    // Cargar noticias desde noticias.json de forma local rápida (Sin agotar API de GitHub)
-    async function cargarNoticiasLocales() {
-      try {
-        const response = await fetch('data/noticias.json');
-        if (!response.ok) return;
+  // Asigna colores dinámicos a las etiquetas según su categoría
+  function getTagColor(tag) {
+    if (!tag) return '#8b5cf6';
+    const t = tag.toUpperCase();
+    if (t.includes('GASTRONOMÍA')) return '#d97706'; // Naranja
+    if (t.includes('EMPRESARIAL') || t.includes('LOCAL')) return '#059669'; // Verde
+    if (t.includes('NACIONAL')) return '#2563eb'; // Azul
+    if (t.includes('DEPORTES')) return '#dc2626'; // Rojo
+    return '#8b5cf6'; // Morado / Opinión
+  }
 
-        const data = await response.json();
-        const newsContainer = document.getElementById('news-grid');
+  async function cargarYFiltrarNoticias() {
+    const newsContainer = document.getElementById('news-grid');
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.filter-btn');
 
-        // Renderizar dinámicamente si existen elementos en el JSON
-        const htmlJson = data.map(nota => `
-          <article class="news-card">
-            <span class="tag opinion" style="background-color: #d97706;">${nota.tag}</span>
-            <h3>${nota.title}</h3>
-            <p>${nota.intro.substring(0, 110)}...</p>
-            <a href="nota.html?id=${nota.id}">Leer nota completa →</a>
-          </article>
-        `).join('');
+    try {
+      const response = await fetch('data/noticias.json');
+      if (!response.ok) throw new Error("No se pudo leer data/noticias.json");
 
-        // Colocar al inicio de la grilla de noticias
-        newsContainer.insertAdjacentHTML('afterbegin', htmlJson);
+      allNewsData = await response.json();
 
-      } catch (err) {
-        console.log("Aviso: noticias.json no encontrado o vacío.", err);
+      // Ordenar por ID descendente (Muestra la nota más reciente primero)
+      allNewsData.sort((a, b) => (b.id || 0) - (a.id || 0));
+
+      renderNoticias(allNewsData);
+
+      // Evento de búsqueda por texto en tiempo real con protección
+      if (searchInput) {
+        searchInput.addEventListener('input', filtrarNoticias);
+      }
+
+      // Evento de clic en botones de categoría
+      if (filterButtons.length > 0) {
+        filterButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCategory = btn.getAttribute('data-category') || 'TODAS';
+            filtrarNoticias();
+          });
+        });
+      }
+
+    } catch (err) {
+      console.error("Aviso o error al cargar noticias:", err);
+      if (newsContainer) {
+        newsContainer.innerHTML = `<p class="no-results-msg" style="grid-column: 1 / -1; text-align: center;">No se pudieron cargar las noticias dinámicas.</p>`;
       }
     }
+  }
 
-    // Redirección de Netlify Identity al iniciar sesión
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
+  function filtrarNoticias() {
+    const searchInput = document.getElementById('search-input');
+    const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    const noticiasFiltradas = allNewsData.filter(nota => {
+      // Filtro por categoría
+      const matchCategory = activeCategory === 'TODAS' || 
+        (nota.tag && nota.tag.toUpperCase().includes(activeCategory.toUpperCase()));
+
+      // Filtro por término de búsqueda (Título, intro, contenido o lugar)
+      const matchText = !searchTerm || 
+        (nota.title && nota.title.toLowerCase().includes(searchTerm)) ||
+        (nota.intro && nota.intro.toLowerCase().includes(searchTerm)) ||
+        (nota.content && nota.content.toLowerCase().includes(searchTerm)) ||
+        (nota.location && nota.location.toLowerCase().includes(searchTerm));
+
+      return matchCategory && matchText;
+    });
+
+    renderNoticias(noticiasFiltradas);
+  }
+
+  function renderNoticias(listaNoticias) {
+    const newsContainer = document.getElementById('news-grid');
+    if (!newsContainer) return;
+
+    if (listaNoticias.length === 0) {
+      newsContainer.innerHTML = `
+        <div class="no-results-msg" style="grid-column: 1 / -1; text-align: center; padding: 40px 0;">
+          <i data-lucide="search-x" style="width: 40px; height: 40px; margin-bottom: 8px;"></i>
+          <h3>No se encontraron publicaciones</h3>
+          <p>Intenta con otras palabras clave o cambia el filtro seleccionado.</p>
+        </div>
+      `;
+      if (window.lucide) lucide.createIcons();
+      return;
     }
 
-    document.addEventListener('DOMContentLoaded', cargarNoticiasLocales);
-  </script>
+    newsContainer.innerHTML = listaNoticias.map(nota => `
+      <article class="news-card">
+        <span class="tag opinion" style="background-color: ${getTagColor(nota.tag)};">${nota.tag || 'OPINIÓN'}</span>
+        <h3>${nota.title}</h3>
+        <p>${nota.intro ? nota.intro.substring(0, 110) + '...' : ''}</p>
+        <a href="nota.html?id=${nota.id}">Leer artículo completo &rarr;</a>
+      </article>
+    `).join('');
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // Redirección de Netlify Identity al iniciar sesión
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', cargarYFiltrarNoticias);
+</script>
 
 </body>
 </html>

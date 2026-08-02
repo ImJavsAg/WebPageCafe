@@ -1,18 +1,89 @@
 [
+
+
+
+
+
+
+  {
+  "id": 6,
+  "title": "Resumen de Prensa: Crisis en la UNAM y Revelaciones de Seguridad Dominan las Primeras Planas Nacionales",
+  "date": "1 de Agosto, 2026",
+  "author": "Redacción / Cafeteando La Noticia",
+  "location": "Ciudad de México",
+  "tag": "NACIONAL / RESUMEN DE PRENSA",
+  "image": "assets/uploads/primeras_planas_01_08.jpg",
+  "caption": "Primeras planas de los principales diarios nacionales del sábado 1 de agosto de 2026.",
+  "intro": "Revisión matutina de las portadas de la prensa nacional: la suspensión del examen en línea de la UNAM y dimisión en Rectoría, avances en investigaciones del CJNG, la agenda de soberanía de Claudia Sheinbaum y la crisis migratoria internacional.",
+  "content": "<p class=\"lead-paragraph\">En el recorrido informativo por las portadas de los periódicos de mayor circulación nacional de este sábado 1 de agosto de 2026, destaca como tema unánime la crisis institucional en la Universidad Nacional Autónoma de México (UNAM), acompañada por revelaciones en materia de seguridad federal y reportes económicos y migratorios de impacto global.</p><h2>1. UNAM: Anulación de Examen en Línea, Repetición Presencial y Dimisión en Rectoría</h2><p>Todos los rotativos nacionales abren en sus notas principales con el escándalo del examen de admisión a licenciatura aplicado por la plataforma digital Territorium Life.</p><ul><li><strong>Repetición de examen:</strong> La UNAM anunció que aplicará una prueba de control presencial a cerca de 58,000 aspirantes tras detectar anomalías, uso de celulares y sospechas de suplantación de identidad.</li><li><strong>Baja en Rectoría:</strong> Patricia Dávila Aranda presentó su renuncia como Secretaria General de la UNAM, siendo relevada por el dentista Javier de la Fuente Hernández. El rector Leonardo Lomelí ofreció disculpas públicas a los jóvenes afectados.</li><li><strong>Costo de la prueba:</strong> Diarios señalan que la empresa contratada cobró montos millonarios por la aplicación del examen fallido, desatando reclamos de justicia y transparencia.</li></ul><blockquote class=\"quote-box\">\"La UNAM aplicará un examen de control presencial para garantizar equidad tras registrar comportamientos atípicos en la prueba en línea.\"<cite>— Resumen de prensa nacional</cite></blockquote><h2>2. Seguridad: Revelaciones sobre el CJNG y los Asesinatos de Carlos Manzo y Valeria Márquez</h2><p>En materia de seguridad nacional, declaraciones del secretario Omar García Harfuch ocuparon espacio relevante en las portadas:</p><ul><li>Se dio a conocer que las investigaciones vinculan a la célula delictiva liderada por 'El R1' (con aval de 'El Mencho' del CJNG) con el homicidio del alcalde Carlos Manzo por 'provocaciones', así como con el asesinato de la influencer Valeria Márquez en Zapopan a solicitud de su hijo.</li></ul><h2>3. Agenda Presidencial: Soberanía Naval y Diálogo Magisterial</h2><p>La presidenta Claudia Sheinbaum Pardo tuvo presencia destacada en las primeras planas al encabezar la graduación de 211 ingenieros guardiamarinas en la Heroica Escuela Naval Militar en Veracruz, donde hizo un llamado a defender la soberanía nacional. Asimismo, se confirmó que la mandataria recibirá a integrantes de la Sección 22 de la CNTE en Palacio Nacional.</p><h2>4. Panorama Económico e Internacional</h2><ul><li><strong>Caída en utilidades de Pemex:</strong> Reportes financieros del segundo trimestre muestran una caída dramática en las ganancias de Petróleos Mexicanos de hasta un 70%, contratando con el repunte de petroleras extranjeras.</li><li><strong>Crisis migratoria en Ceuta:</strong> Se reportó la muerte de más de 57 migrantes tras una estampida e intento de cruce masivo desde Marruecos hacia el enclave español de Ceuta.</li><li><strong>Marcha atrás en la FIFA:</strong> Presiones de la UEFA y Concacaf obligaron a Gianni Infantino a frenar el plan de privatizar y crear una filial comercial para la Copa del Mundo.</li></ul>",
+  "recommendations": []
+  },
   {
     "id": 5,
     "title": "Comida de Amigos en Restaurante Cabo San Lucas Las Palmas",
-    "date": "Viernes 31 de Julio de 2026",
+    "date": "31 de Julio, 2026",
     "author": "Toño García (APREPSAC Relaciones Públicas)",
-    "location": "Plaza Orión",
-    "tag": "Gastronomía & Reuniones",
+    "location": "Plaza Orión, Puebla",
+    "tag": "GASTRONOMÍA & REUNIONES",
     "image": "assets/Comida31julio.jpg",
     "caption": "Toño García durante la grata reunión gastronómica en el restaurante Cabo San Lucas Las Palmas.",
-    "intro": "El pasado viernes 31 de julio de 2026, disfrutamos de una excelente convivencia de amigos en el reconocido restaurante Cabo San Lucas Las Palmas, ubicado en Plaza Orión.",
-    "content": "Tuvimos el honor de compartir la mesa con el propietario Alberto y su distinguida esposa, dueños de la conocida Taquería El Compita, en un ameno encuentro organizado por Toño García, representante de Relaciones Públicas de la APREPSAC.",
+    "intro": "Hoy viernes 31 de julio del año 2026 compartimos una grata comida de amigos con los propietarios de la conocida Taquería El Compita.",
+    "content": "<p>Tuvimos el honor de reunirnos con el propietario Alberto y su distinguida esposa en el Restaurante Cabo San Lucas Las Palmas, ubicado en Plaza Orión, en un ameno encuentro coordinado por Toño García, representante de Relaciones Públicas de la APREPSAC.</p>",
     "recommendations": [
-      "Horario sugerido: Llegar a las 13:30 PM, ya que después de las 15:00 horas el lugar se llena por completo.",
-      "Platillo recomendado: Salmón a la plancha."
+      "Se les recomienda llegar a las 13:30 PM, ya que después de las 15:00 horas el lugar se llena por completo.",
+      "Recomendación especial de la casa: El platillo de Salmón a la plancha."
     ]
+  },
+  {
+    "id": 4,
+    "title": "APREPSAC y la Secretaría de Trabajo Avanzan en la Capacitación para el Distintivo \"Puebla Cinco de Mayo\"",
+    "date": "31 de Julio, 2026",
+    "author": "Prensa APREPSAC / Cafeteando",
+    "location": "Puebla, Pue.",
+    "tag": "LOCAL / EMPRESARIAL",
+    "image": "assets/APREPSAC1.png",
+    "caption": "Representantes de APREPSAC y funcionarios de la Secretaría de Desarrollo Económico y Trabajo durante la sesión de capacitación.",
+    "intro": "Reunión de trabajo estratégica con autoridades laborales e integrantes de la industria restaurantera para impulsar el Trabajo Digno en Puebla.",
+    "content": "<p class=\"lead-paragraph\">Este <strong>31 de julio de 2026</strong> se llevó a cabo una fructífera reunión de trabajo entre la directiva de la <strong>Asociación Poblana de Restaurantes y Prestadores de Servicios (APREPSAC)</strong> y autoridades del Gobierno del Estado de Puebla, con el objetivo de capacitar a los centros de trabajo para la obtención del <strong>Reconocimiento al Trabajo Digno a través del Distintivo \"Puebla Cinco de Mayo\"</strong>.</p><h2>Asistentes a la Mesa de Trabajo</h2><p>En la sesión de capacitación estuvieron presentes autoridades clave de la gestión laboral y representantes del sector restaurantero poblano:</p><ul><li><strong>Lic. Elodia Arenas Machorro:</strong> Subdirectora de Normatividad Laboral de la Secretaría de Trabajo.</li><li><strong>Felipe Mendoza Torres:</strong> Dirección de Normatividad Laboral.</li><li><strong>Said Murat:</strong> Vicepresidente de APREPSAC.</li><li><strong>Guille Gálvez:</strong> Consejera de APREPSAC (Restaurante El Ranchito).</li><li><strong>Antonio García:</strong> Relaciones Públicas de APREPSAC.</li><li><strong>Jorge García:</strong> Prensa APREPSAC.</li><li><strong>Pablo Sandoval:</strong> Propietario del Hotel del Portal.</li><li>Representantes del <strong>Restaurante El Ártico</strong> y <strong>Casa Real Poblana</strong>.</li></ul><blockquote class=\"quote-box\">\"El compromiso del sector restaurantero en Puebla es garantizar espacios laborales dignos, inclusivos y seguros que impulsen la productividad y el bienestar de las y los trabajadores.\"<cite>— Directiva de APREPSAC</cite></blockquote><h2>¿En qué consiste el Distintivo \"Puebla Cinco de Mayo\"?</h2><p>Emitido por el Gobierno del Estado a través de la Secretaría de Desarrollo Económico y Trabajo, este galardón busca reconocer a los centros de trabajo públicos y privados que implementen buenas prácticas en igualdad, inclusión, bienestar y cumplimiento normativo.</p><p>Para obtener este reconocimiento, las empresas deben acreditar al menos el <strong>80% de cumplimiento</strong> en los siguientes ejes de evaluación:</p><ul><li><strong>Igualdad laboral y no discriminación:</strong> Procesos de contratación transparentes e igualdad salarial para puestos equivalentes.</li><li><strong>Inclusión laboral:</strong> Oportunidades y atención a grupos en situación de vulnerabilidad.</li><li><strong>Seguridad y Salud en el Trabajo:</strong> Funcionamiento activo de la Comisión de Seguridad e Higiene y diagnóstico de riesgos.</li><li><strong>Capacitación y Productividad:</strong> Adiestramiento garantizado para el personal y comisiones mixtas de productividad.</li><li><strong>Prevención de la Violencia:</strong> Protocolos claros contra el acoso, hostigamiento sexual y violencia laboral.</li><li><strong>Conciliación vida familiar-laboral:</strong> Políticas que promuevan el bienestar integral de la plantilla.</li></ul><div class=\"podcast-box\" style=\"border-left-color: #059669; background-color: #f0fdf4;\"><div class=\"podcast-info\"><span class=\"podcast-icon\">📑</span><div><h4>Convocatoria Oficial 2026</h4><p>Consulta las bases completas, requisitos y etapas de dictaminación para el Reconocimiento al Trabajo Digno.</p></div></div><a href=\"assets/Convocatoria_Reconocimiento_al_Trabajo_Digno_2026.pdf\" target=\"_blank\" class=\"submit-btn\" style=\"display: inline-block; text-decoration: none; background-color: #059669; margin-top: 10px;\">📄 Ver Convocatoria en PDF</a></div><div class=\"featured-image-box\" style=\"margin-top: 30px;\"><img src=\"assets/APREPSAC2.png\" alt=\"Integrantes de APREPSAC y autoridades laborales\" class=\"featured-image\"></div>",
+    "recommendations": []
+  },
+  {
+    "id": 3,
+    "title": "Cierre de la Academia Militarizada Zaragoza, Inseguridad y Análisis del Sistema de Salud",
+    "date": "31 de Julio, 2026",
+    "author": "Antonio García y Juan Alvaredo",
+    "location": "Puebla, Pue.",
+    "tag": "NACIONAL / LOCAL",
+    "youtube_id": "z4uoOxEpCiE",
+    "caption": "Transmisión completa del programa en Así Lo Dice Puebla.",
+    "intro": "Resumen completo de la transmisión en vivo: lo que pasa con las escuelas militarizadas en Puebla, percepción de inseguridad y libertades de las audiencias.",
+    "content": "<p class=\"lead-paragraph\">En esta emisión de <strong>Cafeteando La Noticia</strong>, abordamos temas de alto impacto local y nacional con enlaces periodísticos de primera mano y el análisis especializado de nuestros colaboradores.</p><h2>1. Suspensión de la Academia Militarizada Ignacio Zaragoza en Puebla</h2><p>En enlace telefónico con el periodista <strong>Abelito (Capital y Titulares)</strong>, se confirmó la notificación para suspender actividades en la <em>Academia Militarizada Ignacio Zaragoza</em> en Puebla. Esto ocurre tras los lamentables hechos registrados en una institución similar a nivel nacional. La SEP Federal determinó que los estudiantes deberán reubicarse en otros planteles y se reembolsarán las cuotas de inscripción correspondientes.</p><h2>2. Percepción de Inseguridad en Puebla alcanza el 81.3%</h2><p>De acuerdo con la Encuesta Nacional de Seguridad Pública Urbana (ENSU) del INEGI, la capital poblana se sitúa en el octavo lugar nacional en percepción de inseguridad. Durante la mesa de debate se enfatizó la preocupación por el estado de las carreteras (como los tramos Esperanza - Maltrata) y la necesidad de tomar previsiones en traslados.</p><blockquote class=\"quote-box\">\"Como sociedad tenemos que valorar bien nuestro voto y exigir cuentas claras en materia de seguridad y servicios públicos.\"<cite>— Debate al aire en Cafeteando La Noticia</cite></blockquote><h2>3. Análisis del Sistema Universal de Salud y Libertad de Expresión</h2><p>En enlace con el <strong>Dr. Enrique Sanabria</strong> desde la Ciudad de México, se analizó el nuevo decreto del Sistema Universal de Salud, los retos de interoperabilidad en las historias clínicas digitales entre el IMSS, ISSSTE y la Secretaría de Salud, además de los derechos de las audiencias y la libertad de opinión en medios digitales.</p><div class=\"podcast-box\"><div class=\"podcast-info\"><span class=\"podcast-icon\">📢</span><div><h4>Próximo Evento: 3er Foro de Capacitación</h4><p>Invitación especial para los trabajadores del sector salud este 13 de agosto a las 2:30 PM en el Restaurante Casa Real Poblana.</p></div></div></div>",
+    "recommendations": []
+  },
+  {
+    "id": 2,
+    "title": "Inseguridad en el Centro Histórico, Denuncias en Salud y Talento Poblano Rumbo al Mundial de Boxeo",
+    "date": "30 de Julio, 2026",
+    "author": "Antonio García, Juan Alvaredo, Lic. Nancy y Joaquín Gutiérrez",
+    "location": "Centro Histórico, Puebla",
+    "tag": "PUEBLA Y DEPORTES",
+    "youtube_id": "jmHDOlvUgZg",
+    "caption": "Transmisión completa del programa en Así Lo Dice Puebla.",
+    "intro": "Resumen de la transmisión en vivo: entrevista con comercio establecido del Centro Histórico, reclamos laborales en el Hospital de la Niñez Poblana y el impulso a la selección de box Esneva.",
+    "content": "<p class=\"lead-paragraph\">En esta emisión de <strong>Cafeteando La Noticia</strong>, abordamos la realidad del comercio en el Centro Histórico de Puebla, los reclamos de la base trabajadora en el sector salud y el compromiso de apoyar al talento deportivo local.</p><h2>1. El Impacto de la Inseguridad en el Centro Histórico de Puebla</h2><p>En enlace telefónico con <strong>Juan Yustis</strong>, representante del comercio establecido en el Centro Histórico, se analizó la situación que enfrentan más de 10,000 comercios y 40,000 familias. Se señalaron retos clave como el comercio informal, la necesidad de mejor iluminación, cámaras de vigilancia en tiempo real y esquemas de denuncia más ágiles para proteger el turismo en zonas emblemáticas como la iglesia del Señor de las Maravillas.</p><h2>2. Exigencias Laborales en el Hospital de la Niñez Poblana</h2><p>En cabina, el líder sindical <strong>Joaquín Gutiérrez</strong> y la <strong>Lic. Nancy</strong> expusieron la difícil situación que enfrentan los trabajadores de la salud: desabasto de insumos básicos (como llaves de tres vías), fallas en servicios subrogados de comedor e intromisiones a la intimidad del personal, exigiendo empatía y pronta respuesta de las autoridades sanitarias estatales.</p><blockquote class=\"quote-box\">\"Nuestros jóvenes deportistas representan lo mejor de Puebla. El compromiso de este espacio es impulsarlos y abrirles las puertas para que logren sus sueños.\"<cite>— Antonio García en Cafeteando La Noticia</cite></blockquote><h2>3. Selección de Boxeo Esneva Puebla rumbo al Mundial en Tijuana</h2><p>Recibimos en la mesa a los profesores <strong>Jonathan y Laura Centeno</strong>, junto a jóvenes pugilistas como <strong>Cristian \"Furia sobre el Ring\"</strong>, <strong>Karen \"La Reina del Sur\"</strong> y <strong>Maximiliano Rosales</strong>, quienes integran la selección de 20 atletas poblanos que representarán al estado en el Mundial de Boxeo en Tijuana este próximo septiembre.</p><div class=\"podcast-box\"><div class=\"podcast-info\"><span class=\"podcast-icon\">🥊</span><div><h4>Compromiso con el Deporte Poblano</h4><p>Cafeteando La Noticia se suma con la donación de equipo deportivo para apoyar la preparación de la delegación poblana de boxeo.</p></div></div></div>",
+    "recommendations": []
+  },
+  {
+    "id": 1,
+    "title": "Arranca la Temporada del Chile en Nogada 2026 y Revelan Crisis Financiera en el IMSS-Bienestar",
+    "date": "25 de Julio, 2026",
+    "author": "Antonio García y Juan Alvaredo",
+    "location": "Puebla, Pue.",
+    "tag": "GASTRONOMÍA Y SALUD",
+    "youtube_id": "kWVKl9eJnmc",
+    "caption": "Transmisión completa del programa en Así Lo Dice Puebla.",
+    "intro": "Resumen del programa: APREPSAC da el banderazo gastronómico en Puebla, protestas por inseguridad en Huaquechula y filtración de audios en el sector salud.",
+    "content": "<p class=\"lead-paragraph\">En esta edición de <strong>Cafeteando La Noticia</strong>, abordamos la apertura de uno de los momentos económicos y culturales más esperados de Puebla, contrastado con serios reportes de inseguridad y una filtración en el sistema de salud estatal.</p><h2>1. Banderazo de la Temporada del Chile en Nogada 2026</h2><p>La Asociación de Restaurantes y Prestadores de Servicios (APREPSAC) dio el banderazo oficial para la temporada 2026 del platillo barroco por excelencia en las instalaciones del Hotel del Portal. Participaron reconocidos establecimientos como <em>El Ranchito, Fonda San José, Los Agaves, La Tradi y La Nogada</em>. Los precios oscilarán entre los $350 y $390 pesos, manteniendo costos accesibles para impulsar el turismo local.</p><h2>2. Tensión e Inseguridad en Huaquechula</h2><p>En enlace informativo con el periodista <strong>Genaro Cepeda (N+ Noticias)</strong>, se reportó el incendio de patrullas en el municipio de Huaquechula por parte de pobladores tras el hartazgo ante crecientes robos, asaltos y homicidios en la región.</p><blockquote class=\"quote-box\">\"El Chile en Nogada es orgullo y tradición que une a las familias poblanas, pero las autoridades deben garantizar la seguridad de quienes nos visitan.\"<cite>— Debate al aire en Cafeteando La Noticia</cite></blockquote><h2>3. Audios Filtrados: Crisis e Insumos en el IMSS-Bienestar</h2><p>Con la intervención del <strong>Dr. Enrique Sanabria</strong>, se analizó la filtración de una reunión donde directivos del IMSS-Bienestar en Puebla admiten deudas millonarias con proveedores, desabasto de medicamentos y falta de presupuesto operativo para lo que resta del año, abriendo el debate sobre los retos del sistema de salud centralizado.</p><div class=\"podcast-box\"><div class=\"podcast-info\"><span class=\"podcast-icon\">🏥</span><div><h4>3er Foro de Capacitación para el Sector Salud</h4><p>Se invita a trabajadores del sector público y privado al foro de actualización este 13 de agosto a las 2:30 PM en Restaurante Casa Real Poblana.</p></div></div></div>",
+    "recommendations": []
   }
 ]
