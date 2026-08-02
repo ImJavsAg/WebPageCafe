@@ -5,27 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel de Administración - Cafeteando La Noticia</title>
 
-  <!-- Widget oficial de Netlify Identity -->
+  <!-- 1. Cargar la librería de Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Carga de Decap CMS -->
+
+  <!-- 2. INICIALIZAR IDENTITY ANTES DE CARGAR DECAP CMS -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init({
+        APIUrl: "https://cafeteandola.netlify.app/.netlify/identity"
+      });
+    }
+  </script>
+
+  <!-- 3. Cargar Decap CMS (ahora sí leerá la conexión correctamente) -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- Script que conecta el dominio propio con el servidor de Identity de Netlify -->
+  <!-- 4. Script para redirigir tras un login exitoso -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      if (window.netlifyIdentity) {
-        // Vinculamos la API directamente a la URL de Netlify que funciona
-        window.netlifyIdentity.init({
-          APIUrl: "https://cafeteandola.netlify.app/.netlify/identity"
-        });
-
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
   </script>
+
 </body>
 </html>
