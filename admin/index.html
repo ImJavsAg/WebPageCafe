@@ -5,11 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panel de Administración - Cafeteando La Noticia</title>
 
-  <!-- Widget oficial de Netlify Identity -->
+  <!-- 1. Cargar el Widget de Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Carga del panel de Decap CMS -->
+
+  <!-- 2. Cargar Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+  <!-- 3. Integración e inicialización del inicio de sesión -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
