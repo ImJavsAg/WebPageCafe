@@ -12,17 +12,20 @@
   <!-- Carga de Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- Script para redireccionar tras iniciar sesión -->
+  <!-- Script que conecta el dominio propio con el servidor de Identity de Netlify -->
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.netlifyIdentity) {
+        // Vinculamos la API directamente a la URL de Netlify que funciona
+        window.netlifyIdentity.init({
+          APIUrl: "https://cafeteandola.netlify.app/.netlify/identity"
+        });
+
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
   </script>
 </body>
 </html>
