@@ -1,53 +1,64 @@
 backend:
   name: git-gateway
-  branch: main # Cambia a 'master' si tu rama principal en GitHub se llama master
+  branch: main
 
 media_folder: "assets/uploads"
 public_folder: "assets/uploads"
 
+site_url: https://cafeteandola.com
+display_url: https://cafeteandola.com
+
 collections:
   - name: "base_de_datos"
-    label: "Base de Datos"
+    label: "📰 Gestión de Noticias"
     files:
       - file: "data/noticias.json"
-        label: "Lista de Noticias"
+        label: "Lista General de Noticias (data/noticias.json)"
         name: "noticias_json"
         fields:
-          - label: "Noticias"
+          - label: "Publicaciones"
             name: ""
             widget: "list"
-            summary: "{{fields.id}} - {{fields.title}}"
+            summary: "ID: {{fields.id}} | {{fields.title}} ({{fields.tag}})"
+            minimize_collapsed: true
             fields:
-      - { label: "ID de la Nota", name: "id", widget: "string" }      
-      - { label: "Título de la Nota", name: "title", widget: "string" }
-      - { label: "Subtítulo / Resumen", name: "subtitle", widget: "text", required: false }
-      - { label: "Fecha de Publicación", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
-      - { 
-          label: "Autor / Redactor", 
-          name: "author", 
-          widget: "select", 
-          default: "Prensa Cafeteando",
-          options: [
-            "Prensa Cafeteando",
-            "Antonio García",
-            "Giovanni Garcia",
-            "Javier Aguilar",
-            "Prensa APREPSAC"
-          ] 
-        }
-      - { 
-          label: "Categoría / Tag", 
-          name: "tag", 
-          widget: "select", 
-          options: [
-            "OPINIÓN", 
-            "NACIONAL", 
-            "LOCAL / EMPRESARIAL", 
-            "PUEBLA Y DEPORTES", 
-            "GASTRONOMÍA Y SALUD"
-          ] 
-        }
-      - { label: "Imagen Destacada", name: "image", widget: "image", required: false }
-      - { label: "Documento PDF Adjunto (Ej. Convocatorias)", name: "pdf", widget: "file", required: false }
-      - { label: "Fragmento de Audio / Podcast (MP3)", name: "audio", widget: "file", required: false }
-      - { label: "Cuerpo de la Nota", name: "body", widget: "markdown" }
+              # Identificación y Título
+              - { label: "ID Único de la Nota", name: "id", widget: "number", value_type: "int", hint: "Número consecutivo (ej. 6, 7, 8). Debe ser único." }
+              - { label: "Título Principal", name: "title", widget: "string", hint: "Título descriptivo y atractivo de la noticia." }
+              
+              # Categoría y Metadatos
+              - label: "Categoría / Sección"
+                name: "tag"
+                widget: "select"
+                options:
+                  - "GASTRONOMÍA"
+                  - "GASTRONOMÍA & REUNIONES"
+                  - "GASTRONOMÍA Y SALUD"
+                  - "LOCAL / EMPRESARIAL"
+                  - "NACIONAL / LOCAL"
+                  - "PUEBLA Y DEPORTES"
+                  - "NACIONAL / RESUMEN DE PRENSA"
+                  - "OPINIÓN"
+                default: "LOCAL / EMPRESARIAL"
+                hint: "Selecciona la categoría principal donde se ubicará la nota."
+
+              - { label: "Fecha de Publicación", name: "date", widget: "string", hint: "Ejemplo: 5 de Agosto, 2026" }
+              - { label: "Autor / Redactor", name: "author", widget: "string", hint: "Ejemplo: Toño García / Redacción" }
+              - { label: "Ubicación / Ciudad", name: "location", widget: "string", default: "Puebla, Pue.", hint: "Ejemplo: Puebla, Pue. o Ciudad de México" }
+
+              # Multimedia
+              - { label: "Imagen Destacada", name: "image", widget: "image", required: false, hint: "Sube o elige una foto. Si vas a usar un video de YouTube, puedes dejar este campo vacío." }
+              - { label: "ID de Video de YouTube (Opcional)", name: "youtube_id", widget: "string", required: false, hint: "Solo el código final del enlace. Ejemplo: en https://www.youtube.com/watch?v=kWVKl9eJnmc coloca únicamente kWVKl9eJnmc" }
+              - { label: "Pie de Imagen / Video", name: "caption", widget: "string", required: false, hint: "Texto descriptivo breve que aparece debajo de la foto o video." }
+
+              # Contenido
+              - { label: "Introducción / Copete", name: "intro", widget: "text", hint: "Párrafo inicial o resumen breve que engancha al lector." }
+              - { label: "Cuerpo Completo de la Noticia", name: "content", widget: "markdown", hint: "Puedes redactar con formato enriquecido (Subtítulos, negritas, listas) o pegar directamente código HTML." }
+              
+              # Recomendaciones (útil para notas gastronómicas)
+              - label: "Recomendaciones Especiales (Opcional)"
+                name: "recommendations"
+                widget: "list"
+                required: false
+                hint: "Añade tips o recomendaciones especiales (útil para la sección gastronómica)."
+                field: { label: "Recomendación", name: "item", widget: "string" }
