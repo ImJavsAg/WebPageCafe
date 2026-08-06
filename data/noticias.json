@@ -1,4 +1,16 @@
-[
+[ {
+  "id": 7,
+  "title": "¡Ya llevo 7 y contando!",
+  "subtitle": "¡Mi gente de Puebla! Hoy me vine a La Porfis, 2 Sur #110 a comerme mi séptimo Chile en Nogada de la temporada. Y no podía ser en otro lado.",
+  "date": "2026-08-05T12:30:00-06:00",
+  "author": "Antonio García",
+  "tag": "GASTRONOMÍA Y SALUD",
+  "image": "assets/uploads/chilesennogada.jpg",
+  "content": ["![](assets/uploads/chilesennogada2.jpg \"¡Platillo Chile en Nogada!\")",
+    "El Chile en Nogada es un platillo emblemático de la gastronomía poblana, que combina sabores dulces y salados, representando los colores de la bandera mexicana. Su preparación requiere ingredientes frescos y de calidad, como el picadillo original, manzana panochera, pera, durazno, nogada de nuez y granada.",
+    "En La Porfis lo sirven como debe de ser, con el picadillo original, manzana panochera, pera, durazno, nogada de nuez y granada 100% poblana. Si usted lleva 0 y yo ya llevo 7, ¡póngase las pilas! Láncese hoy a La Porfis. ¡Pura sabrosura poblana, aquí en el corazón de Puebla!"
+  ]
+  },
   {
     "id": 6,
     "title": "Resumen de Prensa Nacional: Anulación de Examen en la UNAM, Seguridad y Finanzas Públicas",

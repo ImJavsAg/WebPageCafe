@@ -6,16 +6,19 @@ media_folder: "assets/uploads"
 public_folder: "assets/uploads"
 
 collections:
-  - name: "noticias"
-    label: "Noticias y Notas"
-    label_singular: "Noticia"
-    folder: "content/noticias"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    editor:
-      preview: true
-
-    fields:
+  - name: "base_de_datos"
+    label: "Base de Datos"
+    files:
+      - file: "data/noticias.json"
+        label: "Lista de Noticias"
+        name: "noticias_json"
+        fields:
+          - label: "Noticias"
+            name: ""
+            widget: "list"
+            summary: "{{fields.id}} - {{fields.title}}"
+            fields:
+      - { label: "ID de la Nota", name: "id", widget: "string" }      
       - { label: "Título de la Nota", name: "title", widget: "string" }
       - { label: "Subtítulo / Resumen", name: "subtitle", widget: "text", required: false }
       - { label: "Fecha de Publicación", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
