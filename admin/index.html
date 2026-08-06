@@ -3,30 +3,96 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Panel de Administración - Cafeteando La Noticia</title>
-
-  <!-- 1. Cargar el Widget de Netlify Identity -->
+  <title>Panel de Redacción | Cafeteando La Noticia</title>
+  <link rel="icon" type="image/png" href="../assets/taza.png">
+  
+  <!-- Widget de Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- Estilos personalizados para el Panel de Control -->
+  <style>
+    /* Estilos globales de la interfaz de administración */
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    }
+
+    /* Barra Superior (Navbar del CMS) */
+    header[class*="AppHeader"] {
+      background-color: #1e293b !important;
+      border-bottom: 4px solid #8b1e0f !important;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Botones primarios y de guardado con el color tinto institucional */
+    a[class*="SidebarNavLinkActive"],
+    button[class*="PublishButton"],
+    button[class*="Button-button-default-bold-solid-main"] {
+      background-color: #8b1e0f !important;
+      color: #ffffff !important;
+      border-radius: 6px !important;
+      font-weight: 600 !important;
+    }
+
+    /* Hover en botones */
+    button[class*="PublishButton"]:hover,
+    button[class*="Button-button-default-bold-solid-main"]:hover {
+      background-color: #70180c !important;
+    }
+
+    /* Tarjetas de noticias en la lista */
+    div[class*="Card"] {
+      border-radius: 8px !important;
+      border: 1px solid #e2e8f0 !important;
+      transition: all 0.2s ease !important;
+    }
+
+    div[class*="Card"]:hover {
+      border-color: #8b1e0f !important;
+      box-shadow: 0 4px 12px rgba(139, 30, 15, 0.08) !important;
+    }
+
+    /* Títulos de las secciones en el CMS */
+    h1[class*="Title"] {
+      color: #0f172a !important;
+      font-weight: 700 !important;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- 2. Cargar Decap CMS -->
+  <!-- Carga del motor Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-  <!-- 3. Integración e inicialización del inicio de sesión -->
+  <!-- Script de vista previa en tiempo real -->
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
+    // Inyectar la Hoja de Estilos del sitio web en la vista previa del editor
+    CMS.registerPreviewStyle('../style.css');
+
+    // Plantilla personal de vista previa para notas
+    var NotaPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var image = entry.getIn(['data', 'image']);
+        var bg = this.props.getAsset(image);
+
+        return h('div', { className: 'article-container', style: { padding: '20px', background: '#fff' } },
+          h('header', { className: 'article-header' },
+            h('span', { className: 'tag opinion', style: { background: '#8b1e0f', color: '#fff', padding: '4px 8px', borderRadius: '4px' } }, entry.getIn(['data', 'tag']) || 'NOTICIAS'),
+            h('h1', { style: { marginTop: '10px', fontSize: '2rem' } }, entry.getIn(['data', 'title'])),
+            h('div', { className: 'article-meta', style: { color: '#64748b', margin: '10px 0' } },
+              '📅 ' + (entry.getIn(['data', 'date']) || '') + ' | ✍️ ' + (entry.getIn(['data', 'author']) || '')
+            )
+          ),
+          image ? h('div', { className: 'featured-image-box' }, h('img', { src: bg.toString(), style: { maxWidth: '100%', borderRadius: '8px' } })) : null,
+          h('div', { className: 'article-body', style: { marginTop: '20px', lineHeight: '1.6' } },
+            h('p', { style: { fontWeight: 'bold', fontSize: '1.1rem' } }, entry.getIn(['data', 'intro'])),
+            h('div', {}, this.props.widgetFor('content'))
+          )
+        );
+      }
+    });
+
+    // Registrar el componente de vista previa en la colección
+    CMS.registerPreviewTemplate('base_de_datos', NotaPreview);
   </script>
-
-  
-
 </body>
 </html>

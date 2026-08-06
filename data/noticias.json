@@ -1,14 +1,18 @@
-[ {
+[ 
+  {  
   "id": 7,
-  "title": "¡Ya llevo 7 y contando!",
-  "subtitle": "¡Mi gente de Puebla! Hoy me vine a La Porfis, 2 Sur #110 a comerme mi séptimo Chile en Nogada de la temporada. Y no podía ser en otro lado.",
-  "date": "2026-08-05T12:30:00-06:00",
+  "title": "¡Siete y Contando! La Tradición del Chile en Nogada se Disfruta en La Porfis",
+  "date": "5 de Agosto, 2026",
   "author": "Antonio García",
-  "tag": "GASTRONOMÍA Y SALUD",
+  "location": "Centro Histórico, Puebla",
+  "tag": "GASTRONOMÍA",
   "image": "assets/uploads/chilesennogada.jpg",
-  "content": ["![](assets/uploads/chilesennogada2.jpg \"¡Platillo Chile en Nogada!\")",
-    "El Chile en Nogada es un platillo emblemático de la gastronomía poblana, que combina sabores dulces y salados, representando los colores de la bandera mexicana. Su preparación requiere ingredientes frescos y de calidad, como el picadillo original, manzana panochera, pera, durazno, nogada de nuez y granada.",
-    "En La Porfis lo sirven como debe de ser, con el picadillo original, manzana panochera, pera, durazno, nogada de nuez y granada 100% poblana. Si usted lleva 0 y yo ya llevo 7, ¡póngase las pilas! Láncese hoy a La Porfis. ¡Pura sabrosura poblana, aquí en el corazón de Puebla!"
+  "caption": "Antonio García degustando el tradicional Chile en Nogada en el restaurante La Porfis.",
+  "intro": "¡Mi gente de Puebla! Hoy nos fuimos a La Porfis (2 Sur #110) a disfrutar del séptimo Chile en Nogada de la temporada 2026, preparado con los mejores ingredientes 100% poblanos.",
+  "content": "<p class=\"lead-paragraph\">El Chile en Nogada es el platillo barroco por excelencia y uno de los máximos orgullos de la gastronomía mexicana. Su combinación de sabores dulces y salados representa con elegancia los colores de la bandera nacional, exigiendo una preparación cuidadosa con ingredientes frescos de la región.</p><h2>Sabor Auténtico y Tradición Poblana en La Porfis</h2><p>En esta ocasión nos lanzamos a <strong>La Porfis</strong>, ubicada en la calle 2 Sur #110 en pleno Centro Histórico de Puebla, para degustar el séptimo Chile en Nogada en lo que va de esta gran temporada gastronómica.</p><div class=\"featured-image-box\" style=\"margin: 25px 0;\"><img src=\"assets/uploads/chilesennogada2.jpg\" alt=\"Platillo de Chile en Nogada en La Porfis\" class=\"featured-image\" loading=\"lazy\" decoding=\"async\"><span class=\"image-caption\">Presentación del tradicional Chile en Nogada elaborado en La Porfis.</span></div><p>En La Porfis sirven el platillo como debe de ser: elaborado con el picadillo tradicional, manzana panochera, pera de leche, durazno criollo y una rica nogada de nuez de Castilla decorada con abundante granada 100% poblana.</p><blockquote class=\"quote-box\">\"Si usted lleva 0 y yo ya llevo 7, ¡póngase las pilas y láncese a La Porfis! Pura sabrosura poblana aquí en el corazón de Puebla.\"<cite>— Antonio García en Cafeteando La Noticia</cite></blockquote>",
+  "recommendations": [
+    "Ubicación: Restaurante La Porfis, 2 Sur #110, Centro Histórico de Puebla.",
+    "No te pierdas la temporada gastronómica y prueba la Nogada de nuez 100% poblana."
   ]
   },
   {
